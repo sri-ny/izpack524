@@ -4,26 +4,36 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://izpack.org/schema/installation http://izpack.org/schema/installation/izpack-installation-5.0.xsd">
 
+  <!-- Optional: define properties here -->
+  <properties>
+    <property name="java.version" value="11"/>
+  </properties>
+
+  <!-- Info must come AFTER properties -->
   <info>
     <appname>MyApp</appname>
     <appversion>1.0</appversion>
     <author>Your Name</author>
   </info>
 
-  <guiprefs width="800" height="600" resizable="yes" />
+  <!-- UI preferences -->
+  <guiprefs width="800" height="600" resizable="yes"/>
 
+  <!-- Language pack -->
   <locale>
     <langpack iso3="eng"/>
   </locale>
 
+  <!-- Installer panels -->
   <panels>
     <panel classname="HelloPanel"/>
     <panel classname="InstallPanel"/>
     <panel classname="FinishPanel"/>
   </panels>
 
+  <!-- Files to include in installation -->
   <packs>
-    <pack name="Base Pack" required="yes">
+    <pack name="Core" required="yes">
       <files>
         <file src="README.md" targetdir="$INSTALL_PATH"/>
       </files>
