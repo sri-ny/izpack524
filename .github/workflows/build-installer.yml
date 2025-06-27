@@ -19,17 +19,16 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
-    - name: Download IzPack 5.2.4 full installer
-      run: |    
-        wget https://get.jenkins.io/tools/izpack/5.2.4/izpack-5.2.4-standalone.jar -O izpack-installer.jar
-
+    - name: Download IzPack 5.2.4 standalone installer
+      run: |
+        wget https://repo1.maven.org/maven2/org/codehaus/izpack/izpack-installer/5.2.4/izpack-installer-5.2.4.jar \-O izpack-installer.jar
 
     - name: Create output folder
       run: mkdir -p output
 
     - name: Build installer
       run: |
-        java -cp izpack-installer.jar com.izforge.izpack.compiler.Compiler resources/install.xml -b . -o output/installer.jar
+        java -cp izpack-installer.jar com.izforge.izpack.compiler.Compiler \ resources/install.xml -b . -o output/installer.jar
 
     - name: Upload installer
       uses: actions/upload-artifact@v4
