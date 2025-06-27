@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <installation version="5.0"
               xmlns="http://izpack.org/schema/installation"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -11,6 +11,10 @@
   </info>
 
   <guiprefs width="800" height="600" resizable="yes" />
+
+  <locale>
+    <langpack iso3="eng"/>
+  </locale>
 
   <panels>
     <panel classname="HelloPanel"/>
