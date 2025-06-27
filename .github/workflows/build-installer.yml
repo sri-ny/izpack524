@@ -1,0 +1,37 @@
+name: Build IzPack Installer
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+
+    - name: Download IzPack 5.2.4
+      run: |
+        wget https://github.com/izpack/izpack/releases/download/5.2.4/izpack-5.2.4-standalone.jar -O izpack-compiler.jar
+
+    - name: Create output folder
+      run: mkdir -p output
+
+    - name: Build installer
+      run: |
+        java -jar izpack-compiler.jar resources/install.xml -b . -o output/installer.jar
+
+    - name: Upload installer
+      uses: actions/upload-artifact@v4
+      with:
+        name: IzPack Installer
+        path: output/installer.jar
