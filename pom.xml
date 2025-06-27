@@ -1,0 +1,35 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>izpack-builder</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.codehaus.izpack</groupId>
+      <artifactId>izpack-installer</artifactId>
+      <version>5.2.4</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.izpack</groupId>
+        <artifactId>izpack-maven-plugin</artifactId>
+        <version>5.2.4</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals><goal>compile</goal></goals>
+          </execution>
+        </executions>
+        <configuration>
+          <source>resources/install.xml</source>
+          <baseDirectory>.</baseDirectory>
+          <output>target/installer.jar</output>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
