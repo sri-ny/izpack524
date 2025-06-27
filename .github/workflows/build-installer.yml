@@ -21,12 +21,13 @@ jobs:
 
     - name: Download IzPack 5.2.4 compiler
       run: |
-        wget https://repo1.maven.org/maven2/org/codehaus/izpack/izpack-compiler/5.2.4/izpack-compiler-5.2.4.jar -O izpack-compiler.jar
+        wget https://izpack.org/downloads/izpack-dist-5.2.4-compiler.zip -O izpack-zip.zip 
+        unzip izpack-zip.zip -d izpack
 
     - name: Build installer
       run: |
         mkdir -p output
-        java -cp izpack-compiler.jar com.izforge.izpack.compiler.Compiler resources/install.xml -b . -o output/installer.jar
+        java -cp "izpack/lib/*" com.izforge.izpack.compiler.Compiler \ resources/install.xml -b . -o output/installer.jar
 
     - name: Upload installer
       uses: actions/upload-artifact@v4
