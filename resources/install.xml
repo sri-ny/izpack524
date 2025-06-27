@@ -1,0 +1,23 @@
+<installation version="5.2">
+  <info>
+    <appname>MyApp</appname>
+    <appversion>1.0</appversion>
+    <url>https://example.com</url>
+  </info>
+
+  <guiprefs width="800" height="600" resizable="yes" />
+
+  <panels>
+    <panel classname="HelloPanel"/>
+    <panel classname="InstallPanel"/>
+    <panel classname="FinishPanel"/>
+  </panels>
+
+  <packs>
+    <pack name="Core" required="yes">
+      <files>
+        <file src="resources/my-app.jar" targetdir="$INSTALL_PATH"/>
+      </files>
+    </pack>
+  </packs>
+</installation>
