@@ -19,9 +19,10 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
-    - name: Download IzPack 5.2.4
+     - name: Download IzPack 5.2.4 compiler
       run: |
-        wget https://github.com/izpack/izpack/releases/download/5.2.4/izpack-5.2.4-standalone.jar -O izpack-compiler.jar
+        wget https://repo1.maven.org/maven2/org/codehaus/izpack/izpack-compiler/5.2.4/izpack-compiler-5.2.4.jar \
+          -O izpack-compiler.jar
 
     - name: Create output folder
       run: mkdir -p output
