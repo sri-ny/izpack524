@@ -1,8 +1,13 @@
-<installation version="5.2">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<installation version="5.0"
+              xmlns="http://izpack.org/schema/installation"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://izpack.org/schema/installation http://izpack.org/schema/installation/izpack-installation-5.0.xsd">
+
   <info>
     <appname>MyApp</appname>
     <appversion>1.0</appversion>
-    <url>https://example.com</url>
+    <author>Your Name</author>
   </info>
 
   <guiprefs width="800" height="600" resizable="yes" />
@@ -14,10 +19,11 @@
   </panels>
 
   <packs>
-    <pack name="Core" required="yes">
+    <pack name="Base Pack" required="yes">
       <files>
-        <file src="resources/my-app.jar" targetdir="$INSTALL_PATH"/>
+        <file src="README.md" targetdir="$INSTALL_PATH"/>
       </files>
     </pack>
   </packs>
+
 </installation>
