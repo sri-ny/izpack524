@@ -1,19 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
-  <artifactId>izpack-builder</artifactId>
+  <artifactId>izpack-installer</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
+
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.codehaus.izpack</groupId>
       <artifactId>izpack-dist</artifactId>
       <version>5.2.4</version>
+      <type>pom</type>
     </dependency>
   </dependencies>
 
@@ -35,10 +43,9 @@
         <configuration>
           <installFile>resources/install.xml</installFile>
           <baseDir>${project.basedir}</baseDir>
-          <compression>2</compression>
-          <output>${project.build.directory}/installer.jar</output>
         </configuration>
       </plugin>
     </plugins>
   </build>
+
 </project>
