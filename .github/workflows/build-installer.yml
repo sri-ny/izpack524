@@ -1,4 +1,4 @@
-name: Build IzPack Installer
+name: Build IzPack Installer via Maven
 
 on:
   push:
@@ -13,24 +13,18 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Java
+    - name: Setup Java & Maven
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        distribution: 'adopt'
-
-    - name: Download IzPack 5.2.4 compiler
-      run: |
-        wget https://izpack.org/downloads/izpack-dist-5.2.4-compiler.zip -O izpack-zip.zip 
-        unzip izpack-zip.zip -d izpack
+        distribution: 'temurin'
+        cache: maven
 
     - name: Build installer
-      run: |
-        mkdir -p output
-        java -cp "izpack/lib/*" com.izforge.izpack.compiler.Compiler \ resources/install.xml -b . -o output/installer.jar
+      run: mvn package
 
-    - name: Upload installer
+    - name: Upload installer artifact
       uses: actions/upload-artifact@v4
       with:
         name: IzPack Installer
-        path: output/installer.jar
+        path: target/installer.jar
