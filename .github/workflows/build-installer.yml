@@ -1,30 +1,27 @@
-name: Build IzPack Installer via Maven
+name: Maven Build IzPack Installer
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Setup Java & Maven
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-        cache: maven
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+          cache: maven
 
-    - name: Build installer
-      run: mvn package
+      - name: Package IzPack Installer
+        run: mvn clean package
 
-    - name: Upload installer artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: IzPack Installer
-        path: target/installer.jar
+      - name: Upload Installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: izpack-installer
+          path: target/installer.jar
