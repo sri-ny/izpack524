@@ -9,21 +9,19 @@
     <appversion>1.0</appversion>
     <author>Your Name</author>
   </info>
-  <properties/>
-  <guiprefs width="800" height="600" resizable="yes">
-    <splash>images/splash.png</splash>
-  </guiprefs>
 
+  <!-- Optional, can be omitted if empty -->
+  <properties/> 
+
+  <guiprefs width="800" height="600" resizable="yes"/>
   <locale>
     <langpack iso3="eng"/>
   </locale>
-
   <panels>
     <panel classname="HelloPanel"/>
     <panel classname="InstallPanel"/>
     <panel classname="FinishPanel"/>
   </panels>
-
   <packs>
     <pack name="Core" required="yes">
       <files>
@@ -31,5 +29,4 @@
       </files>
     </pack>
   </packs>
-
 </installation>
