@@ -3,13 +3,13 @@
     xmlns="http://izpack.org/schema/installation"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://izpack.org/schema/installation http://izpack.org/schema/installation/izpack-installation-5.0.xsd">
-<properties/>
+
   <info>
     <appname>MyApp</appname>
     <appversion>1.0</appversion>
     <author>Your Name</author>
   </info>
-
+  <properties/>
   <guiprefs width="800" height="600" resizable="yes">
     <splash>images/splash.png</splash>
   </guiprefs>
