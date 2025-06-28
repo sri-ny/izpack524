@@ -10,23 +10,4 @@
     <author>Your Name</author>
   </info>
 
-  <!-- Optional, can be omitted if empty -->
-  <!--<properties/> -->
-
-  <guiprefs width="800" height="600" resizable="yes"/>
-  <locale>
-    <langpack iso3="eng"/>
-  </locale>
-  <panels>
-    <panel classname="HelloPanel"/>
-    <panel classname="InstallPanel"/>
-    <panel classname="FinishPanel"/>
-  </panels>
-  <packs>
-    <pack name="Core" required="yes">
-      <files>
-        <file src="README.md" targetdir="$INSTALL_PATH"/>
-      </files>
-    </pack>
-  </packs>
-</installation>
+ </installation>
