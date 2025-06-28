@@ -4,10 +4,25 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://izpack.org/schema/installation http://izpack.org/schema/installation/izpack-installation-5.0.xsd">
 
+  <!-- Optional properties first -->
+  <!-- <properties>...</properties> -->
+
+  <!-- Info must be next -->
   <info>
-    <appname>MyApp</appname>
+    <appname>My Application</appname>
     <appversion>1.0</appversion>
-    <author>Your Name</author>
+    <authors>
+      <author name="Me" email="me@example.com"/>
+    </authors>
   </info>
 
- </installation>
+  <!-- Other elements follow... -->
+  <panels>
+    <!-- your panels here -->
+  </panels>
+
+  <packs>
+    <!-- your packs here -->
+  </packs>
+
+</installation>
