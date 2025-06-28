@@ -18,7 +18,7 @@ jobs:
           cache: maven
 
       - name: Package IzPack Installer
-        run: mvn clean package
+        run: mvn clean package -X
 
       - name: Upload Installer
         uses: actions/upload-artifact@v4
